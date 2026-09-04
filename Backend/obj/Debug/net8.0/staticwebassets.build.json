@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "05GNFneZxRgGEO3xIE79+cBfkEBnYAvdFEzqQXCiSFk=",
+  "Source": "Backend",
+  "BasePath": "_content/Backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Backend/wwwroot",
+      "Source": "Backend",
+      "ContentRoot": "/Users/danieleppler/Documents/Projects/HomeTasks/IAI_Task/Backend/wwwroot/",
+      "BasePath": "_content/Backend",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/danieleppler/Documents/Projects/HomeTasks/IAI_Task/Backend/wwwroot/images/avatar-placeholder.svg",
+      "SourceId": "Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/danieleppler/Documents/Projects/HomeTasks/IAI_Task/Backend/wwwroot/",
+      "BasePath": "_content/Backend",
+      "RelativePath": "images/avatar-placeholder.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/avatar-placeholder.svg"
+    },
+    {
+      "Identity": "/Users/danieleppler/Documents/Projects/HomeTasks/IAI_Task/Backend/wwwroot/images/post-placeholder.svg",
+      "SourceId": "Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/danieleppler/Documents/Projects/HomeTasks/IAI_Task/Backend/wwwroot/",
+      "BasePath": "_content/Backend",
+      "RelativePath": "images/post-placeholder.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/post-placeholder.svg"
+    }
+  ]
+}

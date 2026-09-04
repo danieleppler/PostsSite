@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "a1b2c3d4-0001-4a11-9c11-000000000001",
+    "Title": "Mountain bike, barely used",
+    "Description": "Trek mountain bike, bought last year, ridden maybe 5 times. Great condition, new tires.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "buy&sale",
+    "Location": { "Latitude": 32.085300, "Longitude": 34.781800 },
+    "DatePosted": "2026-08-24T09:15:00Z",
+    "UserPosted": { "Id": "u-daniel", "Name": "Daniel Eppler", "Avatar": "/images/avatar-placeholder.svg" }
+  },
+  {
+    "Id": "a1b2c3d4-0002-4a11-9c11-000000000002",
+    "Title": "Community BBQ this Sunday",
+    "Description": "Join us for a neighborhood BBQ in the park. Bring a side dish if you can, grill and drinks provided.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "events",
+    "Location": { "Latitude": 32.081200, "Longitude": 34.779600 },
+    "DatePosted": "2026-08-25T14:30:00Z",
+    "UserPosted": { "Id": "u-sarah", "Name": "Sarah Cohen", "Avatar": "/images/avatar-placeholder.svg" }
+  },
+  {
+    "Id": "a1b2c3d4-0003-4a11-9c11-000000000003",
+    "Title": "Baby stroller, excellent condition",
+    "Description": "Selling our stroller, kid outgrew it. Foldable, lightweight, includes rain cover.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "buy&sale",
+    "Location": { "Latitude": 32.070500, "Longitude": 34.789300 },
+    "DatePosted": "2026-08-26T10:00:00Z",
+    "UserPosted": { "Id": "u-noa", "Name": "Noa Levi", "Avatar": "/images/avatar-placeholder.svg" }
+  },
+  {
+    "Id": "a1b2c3d4-0004-4a11-9c11-000000000004",
+    "Title": "Free yoga in the park",
+    "Description": "Weekly outdoor yoga session, all levels welcome. Bring your own mat.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "events",
+    "Location": { "Latitude": 32.090100, "Longitude": 34.774200 },
+    "DatePosted": "2026-08-27T06:45:00Z",
+    "UserPosted": { "Id": "u-avi", "Name": "Avi Mizrahi", "Avatar": "/images/avatar-placeholder.svg" }
+  },
+  {
+    "Id": "a1b2c3d4-0005-4a11-9c11-000000000005",
+    "Title": "Study desk with drawers",
+    "Description": "Solid wood desk, three drawers, minor scratches on top. Great for a home office.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "buy&sale",
+    "Location": { "Latitude": 32.077800, "Longitude": 34.768900 },
+    "DatePosted": "2026-08-28T17:20:00Z",
+    "UserPosted": { "Id": "u-daniel", "Name": "Daniel Eppler", "Avatar": "/images/avatar-placeholder.svg" }
+  },
+  {
+    "Id": "a1b2c3d4-0006-4a11-9c11-000000000006",
+    "Title": "Local flea market Saturday",
+    "Description": "Monthly flea market at the square. Vendors, food trucks, and live music from noon.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "events",
+    "Location": { "Latitude": 32.083900, "Longitude": 34.791500 },
+    "DatePosted": "2026-08-29T08:00:00Z",
+    "UserPosted": { "Id": "u-sarah", "Name": "Sarah Cohen", "Avatar": "/images/avatar-placeholder.svg" }
+  },
+  {
+    "Id": "a1b2c3d4-0007-4a11-9c11-000000000007",
+    "Title": "Acoustic guitar, like new",
+    "Description": "Yamaha acoustic guitar, comes with a soft case and extra strings. Barely played.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "buy&sale",
+    "Location": { "Latitude": 32.095600, "Longitude": 34.782100 },
+    "DatePosted": "2026-08-30T13:10:00Z",
+    "UserPosted": { "Id": "u-noa", "Name": "Noa Levi", "Avatar": "/images/avatar-placeholder.svg" }
+  },
+  {
+    "Id": "a1b2c3d4-0008-4a11-9c11-000000000008",
+    "Title": "Street block party",
+    "Description": "Annual block party on our street, kids activities, potluck dinner, and a DJ in the evening.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "events",
+    "Location": { "Latitude": 32.079400, "Longitude": 34.775300 },
+    "DatePosted": "2026-08-31T11:00:00Z",
+    "UserPosted": { "Id": "u-avi", "Name": "Avi Mizrahi", "Avatar": "/images/avatar-placeholder.svg" }
+  },
+  {
+    "Id": "a1b2c3d4-0009-4a11-9c11-000000000009",
+    "Title": "Bookshelf, 5 shelves",
+    "Description": "IKEA bookshelf, sturdy and clean, disassembled and ready for pickup.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "buy&sale",
+    "Location": { "Latitude": 32.073200, "Longitude": 34.786700 },
+    "DatePosted": "2026-09-01T15:40:00Z",
+    "UserPosted": { "Id": "u-sarah", "Name": "Sarah Cohen", "Avatar": "/images/avatar-placeholder.svg" }
+  },
+  {
+    "Id": "a1b2c3d4-0010-4a11-9c11-000000000010",
+    "Title": "Neighborhood cleanup day",
+    "Description": "Volunteers needed for our quarterly park and beach cleanup. Gloves and bags provided.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "events",
+    "Location": { "Latitude": 32.086700, "Longitude": 34.765400 },
+    "DatePosted": "2026-09-02T07:30:00Z",
+    "UserPosted": { "Id": "u-daniel", "Name": "Daniel Eppler", "Avatar": "/images/avatar-placeholder.svg" }
+  },
+  {
+    "Id": "a1b2c3d4-0011-4a11-9c11-000000000011",
+    "Title": "Kids bicycle, size 16 inch",
+    "Description": "Great starter bike for ages 4-6, training wheels included. Some paint wear but works perfectly.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "buy&sale",
+    "Location": { "Latitude": 32.091800, "Longitude": 34.793600 },
+    "DatePosted": "2026-09-03T12:05:00Z",
+    "UserPosted": { "Id": "u-noa", "Name": "Noa Levi", "Avatar": "/images/avatar-placeholder.svg" }
+  },
+  {
+    "Id": "a1b2c3d4-0012-4a11-9c11-000000000012",
+    "Title": "Outdoor movie night",
+    "Description": "Family-friendly movie screening in the park after sunset. Bring blankets and chairs.",
+    "PostImage": "/images/post-placeholder.svg",
+    "Category": "events",
+    "Location": { "Latitude": 32.088900, "Longitude": 34.771100 },
+    "DatePosted": "2026-09-04T09:00:00Z",
+    "UserPosted": { "Id": "u-avi", "Name": "Avi Mizrahi", "Avatar": "/images/avatar-placeholder.svg" }
+  }
+]
