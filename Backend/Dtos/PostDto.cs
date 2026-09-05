@@ -8,6 +8,7 @@ public class PostDto
 {
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
+    public string PostImage { get; set; } = string.Empty;
 
     [JsonConverter(typeof(PostCategoryJsonConverter))]
     public PostCategory Category { get; set; }

@@ -1,11 +1,8 @@
 import type { Post } from '../types/post'
 import { resolveAssetUrl } from '../api/client'
+import { CATEGORY_LABELS } from '../constants/postCategory'
+import { PlaceLabel } from './PlaceLabel'
 import './PostCard.css'
-
-const CATEGORY_LABELS: Record<Post['category'], string> = {
-  'buy&sale': 'Buy & Sale',
-  events: 'Events',
-}
 
 function formatDate(dateIso: string): string {
   return new Date(dateIso).toLocaleDateString(undefined, {
@@ -15,14 +12,43 @@ function formatDate(dateIso: string): string {
   })
 }
 
-export function PostCard({ post }: { post: Post }) {
+interface PostCardProps {
+  post: Post
+  isOwner: boolean
+  onEdit: (post: Post) => void
+  onDelete: (post: Post) => void
+}
+
+export function PostCard({ post, isOwner, onEdit, onDelete }: PostCardProps) {
   return (
     <article className="post-card">
-      <img
-        className="post-card__image"
-        src={resolveAssetUrl(post.postImage)}
-        alt={post.title}
-      />
+      <div className="post-card__image-wrapper">
+        <img
+          className="post-card__image"
+          src={resolveAssetUrl(post.postImage)}
+          alt={post.title}
+        />
+        {isOwner && (
+          <div className="post-card__image-actions">
+            <button
+              type="button"
+              className="post-card__icon-button"
+              onClick={() => onEdit(post)}
+              aria-label="Edit post"
+            >
+              ✎
+            </button>
+            <button
+              type="button"
+              className="post-card__icon-button post-card__icon-button--danger"
+              onClick={() => onDelete(post)}
+              aria-label="Delete post"
+            >
+              🗑
+            </button>
+          </div>
+        )}
+      </div>
 
       <div className="post-card__content">
         <div className="post-card__row post-card__row--meta">
@@ -30,9 +56,7 @@ export function PostCard({ post }: { post: Post }) {
             {CATEGORY_LABELS[post.category]}
           </span>
           {post.location && (
-            <span className="post-card__location">
-              {post.location.latitude.toFixed(4)}, {post.location.longitude.toFixed(4)}
-            </span>
+            <PlaceLabel latitude={post.location.latitude} longitude={post.location.longitude} />
           )}
         </div>
 

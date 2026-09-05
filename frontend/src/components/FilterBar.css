@@ -1,0 +1,100 @@
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.filter-bar__search {
+  flex: 1 1 220px;
+  min-width: 180px;
+  padding: 8px 10px;
+  font: inherit;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  color: #1f2430;
+  background: #fff;
+}
+
+.filter-bar__select {
+  padding: 8px 10px;
+  font: inherit;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  color: #1f2430;
+  background: #fff;
+}
+
+.filter-bar__date-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-bar__date-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.filter-bar__date {
+  padding: 7px 10px;
+  font: inherit;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  color: #1f2430;
+  background: #fff;
+}
+
+.filter-bar__apply {
+  padding: 8px 16px;
+  font: inherit;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 6px;
+  background: #3b5bdb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.filter-bar__apply:hover:not(:disabled) {
+  background: #3350c9;
+}
+
+.filter-bar__apply:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.filter-bar__distance-toggle {
+  padding: 8px 16px;
+  font: inherit;
+  font-size: 0.85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: #1f2430;
+  cursor: pointer;
+}
+
+.filter-bar__distance-toggle:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.filter-bar__distance-toggle--active {
+  border-color: #3b5bdb;
+  background: #edf1fd;
+  color: #3b5bdb;
+}
+
+.filter-bar__distance-toggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 560px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

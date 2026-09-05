@@ -14,3 +14,27 @@
   font-size: 1.5rem;
   color: #1f2430;
 }
+
+.add-post-fab {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #3b5bdb;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(59, 91, 219, 0.35);
+  z-index: 100;
+}
+
+.add-post-fab:hover {
+  background: #3350c9;
+}

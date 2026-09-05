@@ -1,6 +1,7 @@
 using Backend.Dtos;
 using Backend.Models;
 using Backend.Services;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,18 +33,46 @@ app.UseStaticFiles();
 
 var posts = app.MapGroup("/api/posts");
 
-posts.MapGet("/", async ([AsParameters] PostQueryDto query, IPostRepository repository) =>
+posts.MapGet("/", async (
+    [AsParameters] PostQueryDto query,
+    [FromHeader(Name = "X-User-Latitude")] double? userLatitude,
+    [FromHeader(Name = "X-User-Longitude")] double? userLongitude,
+    IPostRepository repository) =>
 {
     var pageNumber = query.PageNumber is null or < 1 ? 1 : query.PageNumber.Value;
     var itemCount = query.ItemCount is null or < 1 ? 12 : query.ItemCount.Value;
 
-    var paged = await repository.GetPagedAsync(pageNumber, itemCount);
+    PostCategory? category = null;
+    if (!string.IsNullOrWhiteSpace(query.Category))
+    {
+        if (!PostCategoryValues.TryParse(query.Category, out var parsedCategory))
+        {
+            return Results.BadRequest($"Unknown category value: {query.Category}");
+        }
+        category = parsedCategory;
+    }
+
+    UserLocation? sortOrigin = null;
+    if (string.Equals(query.SortBy, "distance", StringComparison.OrdinalIgnoreCase))
+    {
+        if (userLatitude is null || userLongitude is null)
+        {
+            return Results.BadRequest(
+                "Sorting by distance requires the X-User-Latitude and X-User-Longitude headers.");
+        }
+        sortOrigin = new UserLocation(userLatitude.Value, userLongitude.Value);
+    }
+
+    var filter = new PostFilter(query.Q, category, query.DateFrom, query.DateTo);
+    var paged = await repository.GetPagedAsync(pageNumber, itemCount, filter, sortOrigin);
 
     return Results.Ok(new PagedPostResponseDto
     {
         PageNumber = pageNumber,
         ItemCount = itemCount,
-        Items = paged.Select(p => p.ToResponseDto()).ToList()
+        TotalCount = paged.TotalCount,
+        TotalPages = (int)Math.Ceiling(paged.TotalCount / (double)itemCount),
+        Items = paged.Items.Select(p => p.ToResponseDto()).ToList()
     });
 });
 
@@ -55,11 +84,18 @@ posts.MapGet("/{id}", async (string id, IPostRepository repository) =>
 
 posts.MapPost("/", async (PostDto dto, IPostRepository repository) =>
 {
-    var post = dto.ToPost();
-    post.DatePosted = DateTime.UtcNow;
+    try
+    {
+        var post = dto.ToPost();
+        post.DatePosted = DateTime.UtcNow;
 
-    var created = await repository.CreateAsync(post);
-    return Results.Created($"/api/posts/{created.Id}", created.ToResponseDto());
+        var created = await repository.CreateAsync(post);
+        return Results.Created($"/api/posts/{created.Id}", created.ToResponseDto());
+    }
+    catch (ArgumentException ex)
+    {
+        return Results.BadRequest(ex.Message);
+    }
 });
 
 posts.MapPut("/{id}", async (string id, PostDto dto, IPostRepository repository) =>
@@ -70,12 +106,18 @@ posts.MapPut("/{id}", async (string id, PostDto dto, IPostRepository repository)
         return Results.NotFound();
     }
 
-    var updated = dto.ToPost();
-    updated.PostImage = existing.PostImage;
-    updated.DatePosted = existing.DatePosted;
+    try
+    {
+        var updated = dto.ToPost();
+        updated.DatePosted = existing.DatePosted;
 
-    var result = await repository.UpdateAsync(id, updated);
-    return result is not null ? Results.Ok(result.ToResponseDto()) : Results.NotFound();
+        var result = await repository.UpdateAsync(id, updated);
+        return result is not null ? Results.Ok(result.ToResponseDto()) : Results.NotFound();
+    }
+    catch (ArgumentException ex)
+    {
+        return Results.BadRequest(ex.Message);
+    }
 });
 
 posts.MapDelete("/{id}", async (string id, IPostRepository repository) =>

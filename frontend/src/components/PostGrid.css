@@ -41,6 +41,34 @@
   color: #d1453b;
 }
 
-.post-grid__sentinel {
-  height: 1px;
+.post-grid__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.post-grid__page-button {
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: #1f2430;
+  cursor: pointer;
+}
+
+.post-grid__page-button:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.post-grid__page-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.post-grid__page-number {
+  font-size: 0.85rem;
+  color: #6b7280;
 }

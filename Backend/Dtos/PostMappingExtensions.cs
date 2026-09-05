@@ -20,6 +20,7 @@ public static class PostMappingExtensions
     {
         Title = dto.Title,
         Description = dto.Description,
+        PostImage = dto.PostImage,
         Category = dto.Category,
         Location = dto.Location,
         UserPosted = dto.UserPosted

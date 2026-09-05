@@ -25,5 +25,23 @@ export interface Post {
 export interface PagedPosts {
   pageNumber: number
   itemCount: number
+  totalCount: number
+  totalPages: number
   items: Post[]
+}
+
+export interface PostDto {
+  title: string
+  description: string
+  postImage: string
+  category: PostCategory
+  location: Location | null
+  userPosted: User
+}
+
+export interface PostFilters {
+  q: string
+  category: PostCategory | ''
+  dateFrom: string
+  dateTo: string
 }

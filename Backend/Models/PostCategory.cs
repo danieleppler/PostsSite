@@ -9,29 +9,47 @@ public enum PostCategory
     Events
 }
 
+public static class PostCategoryValues
+{
+    public const string BuyAndSale = "buy&sale";
+    public const string Events = "events";
+
+    public static bool TryParse(string? value, out PostCategory category)
+    {
+        switch (value)
+        {
+            case BuyAndSale:
+                category = PostCategory.BuyAndSale;
+                return true;
+            case Events:
+                category = PostCategory.Events;
+                return true;
+            default:
+                category = default;
+                return false;
+        }
+    }
+
+    public static string ToStringValue(PostCategory category) => category switch
+    {
+        PostCategory.BuyAndSale => BuyAndSale,
+        PostCategory.Events => Events,
+        _ => throw new ArgumentOutOfRangeException(nameof(category))
+    };
+}
+
 public class PostCategoryJsonConverter : JsonConverter<PostCategory>
 {
-    private const string BuyAndSaleValue = "buy&sale";
-    private const string EventsValue = "events";
-
     public override PostCategory Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         var value = reader.GetString();
-        return value switch
-        {
-            BuyAndSaleValue => PostCategory.BuyAndSale,
-            EventsValue => PostCategory.Events,
-            _ => throw new JsonException($"Unknown PostCategory value: {value}")
-        };
+        return PostCategoryValues.TryParse(value, out var category)
+            ? category
+            : throw new JsonException($"Unknown PostCategory value: {value}");
     }
 
     public override void Write(Utf8JsonWriter writer, PostCategory value, JsonSerializerOptions options)
     {
-        writer.WriteStringValue(value switch
-        {
-            PostCategory.BuyAndSale => BuyAndSaleValue,
-            PostCategory.Events => EventsValue,
-            _ => throw new JsonException($"Unknown PostCategory value: {value}")
-        });
+        writer.WriteStringValue(PostCategoryValues.ToStringValue(value));
     }
 }
