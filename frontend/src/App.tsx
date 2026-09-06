@@ -15,8 +15,13 @@ function App() {
 
   return (
     <div className="page">
-      <header className="page__header">
-        <h1>Posts</h1>
+      <header className="hero-banner">
+        <div className="hero-banner__content">
+          <h1 className="hero-banner__title">Find events close to you</h1>
+          <p className="hero-banner__subtitle">
+            Discover what's happening nearby, or write a post to share your own.
+          </p>
+        </div>
       </header>
 
       <button

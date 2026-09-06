@@ -13,7 +13,7 @@
     "UserPosted": {
       "Id": "u-daniel",
       "Name": "Daniel Eppler",
-      "Avatar": "/images/Daniel.png"
+      "Avatar": "/images/Unknown.png"
     }
   },
   {
@@ -81,7 +81,7 @@
     "UserPosted": {
       "Id": "u-daniel",
       "Name": "Daniel Eppler",
-      "Avatar": "/images/Daniel.png"
+      "Avatar": "/images/Unknown.png"
     }
   },
   {
@@ -166,7 +166,7 @@
     "UserPosted": {
       "Id": "u-daniel",
       "Name": "Daniel Eppler",
-      "Avatar": "/images/Daniel.png"
+      "Avatar": "/images/Unknown.png"
     }
   },
   {
@@ -201,57 +201,6 @@
       "Id": "u-avi",
       "Name": "Avi Mizrahi",
       "Avatar": "/images/avatar-placeholder.svg"
-    }
-  },
-  {
-    "Id": "7e1477b6-ba42-4b9e-9bbb-eca16101d5e1",
-    "Title": "d",
-    "Description": "dasd",
-    "PostImage": "/images/post-placeholder.svg",
-    "Category": "buy\u0026sale",
-    "Location": {
-      "Latitude": 32.07103198290951,
-      "Longitude": 34.778023449707035
-    },
-    "DatePosted": "2026-09-05T09:22:27.502912Z",
-    "UserPosted": {
-      "Id": "u-daniel",
-      "Name": "Daniel Eppler",
-      "Avatar": "/images/Daniel.jpeg"
-    }
-  },
-  {
-    "Id": "50eabbea-8387-43a1-983d-49436aeab053",
-    "Title": "asd",
-    "Description": "asd",
-    "PostImage": "/images/post-placeholder.svg",
-    "Category": "buy\u0026sale",
-    "Location": {
-      "Latitude": 32.14123040170519,
-      "Longitude": 34.84023792505396
-    },
-    "DatePosted": "2026-09-05T09:22:38.663003Z",
-    "UserPosted": {
-      "Id": "u-daniel",
-      "Name": "Daniel Eppler",
-      "Avatar": "/images/Daniel.jpeg"
-    }
-  },
-  {
-    "Id": "46b47c94-73f1-4870-92ec-0027c5a1e018",
-    "Title": "asdasd",
-    "Description": "asdasd",
-    "PostImage": "/images/post-placeholder.svg",
-    "Category": "buy\u0026sale",
-    "Location": {
-      "Latitude": 31.987253357625182,
-      "Longitude": 34.74297430134342
-    },
-    "DatePosted": "2026-09-05T09:23:05.333483Z",
-    "UserPosted": {
-      "Id": "u-daniel",
-      "Name": "Daniel Eppler",
-      "Avatar": "/images/Daniel.jpeg"
     }
   }
 ]

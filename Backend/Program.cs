@@ -33,6 +33,9 @@ app.UseStaticFiles();
 
 var posts = app.MapGroup("/api/posts");
 
+//Get the filter params and page number and items count to retreive, all embedded in postQueryDto
+//get the user lat and lon from the headers as well, so if sortby is by distance , we can compute the
+//distance between locations
 posts.MapGet("/", async (
     [AsParameters] PostQueryDto query,
     [FromHeader(Name = "X-User-Latitude")] double? userLatitude,
@@ -66,14 +69,8 @@ posts.MapGet("/", async (
     var filter = new PostFilter(query.Q, category, query.DateFrom, query.DateTo);
     var paged = await repository.GetPagedAsync(pageNumber, itemCount, filter, sortOrigin);
 
-    return Results.Ok(new PagedPostResponseDto
-    {
-        PageNumber = pageNumber,
-        ItemCount = itemCount,
-        TotalCount = paged.TotalCount,
-        TotalPages = (int)Math.Ceiling(paged.TotalCount / (double)itemCount),
-        Items = paged.Items.Select(p => p.ToResponseDto()).ToList()
-    });
+    return Results.Ok(new PagedPostResponseDto(pageNumber, itemCount, paged.TotalCount,
+    (int)Math.Ceiling(paged.TotalCount / (double)itemCount), paged.Items.Select(p => p.ToResponseDto()).ToList()));
 });
 
 posts.MapGet("/{id}", async (string id, IPostRepository repository) =>
